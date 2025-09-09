@@ -27,21 +27,12 @@ Welcome to The Responsive Spots website where you can edit and add images for a 
 **Images**
 
 [avatar-image](./images/demo/avatar.jpg)
-
 [image-1-feldmann](./images/demo/1-photo-by-moritz-feldmann-from-pexels.jpg)
-
 [image-2-ceiline](./images/demo/2-photo-by-ceiline-from-pexels.jpg)
-
 [image-3-dogan](./images/demo/3-photo-by-tubanur-dogan-from-pexels.jpg)
-
 [image-4-laschet](./images/demo/4-photo-by-maurice-laschet-from-pexels.jpg)
-
 [image-5-nguyen](./images/demo/5-photo-by-van-anh-nguyen-from-pexels.jpg)
-
 [image-6-feldmann](./images/demo/avatar.jpg)
-
 [heart-icon](./images/demo/heart.png)
-
 [pencil-icon](./images/demo/pencil.png)
-
 [plus-icon](./images/demo/plus.png)
