@@ -7,10 +7,6 @@
 .profile__avatar {
   max-width: 190px;
   margin-right: 20px;
-
-  /*
-  grid-row: 1/3;
-  */
 }
 
 .profile__content {
@@ -39,7 +35,7 @@
   color: rgba(33, 33, 33, 70%);
 }
 
-.edit__button {
+.profile__button-edit {
   border-style: none;
   background-color: #fcf5e5;
   margin-top: auto;
@@ -55,15 +51,15 @@
   cursor: pointer;
 }
 
-.edit__button:hover {
+.profile__button-edit:hover {
   color: rgba(33, 33, 33, 1);
 }
 
-.edit__icon {
+.profile__button-editicon {
   color: rgba(33, 33, 33, 70%);
 }
 
-.post__button {
+.profile__button-post {
   background-color: rgba(33, 33, 33, 1);
   color: #fcf5e5;
   font-size: 16px;
@@ -80,11 +76,11 @@
   cursor: pointer;
 }
 
-.post__button:hover {
+.profile__button-post:hover {
   background-color: rgba(33, 33, 33, 0.8);
 }
 
-.post__icon {
+.profile__button-posticon {
   border-radius: 2px;
   width: 12px;
   height: 12px;
@@ -129,11 +125,11 @@
     text-align: center;
   }
 
-  .edit__button {
+  .profile__button-edit {
     margin: 0 auto;
     padding-bottom: 20px;
   }
-  .post__button {
+  .profile__button-post {
     margin: 0;
   }
 }
