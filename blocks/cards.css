@@ -15,8 +15,13 @@
   grid-row-gap: 40px;
 }
 
-@media screen and (max-width: 629) {
+@media screen and (max-width: 629px) {
+  .cards {
+    padding-bottom: 20px;
+  }
+
   .cards__list {
     grid-template-columns: repeat(auto-fit, 288px);
+    gap: 20px;
   }
 }
