@@ -38,6 +38,10 @@ Welcome to The Responsive Spots website where you can edit and add images for a 
 [plus-icon](./images/plus1.svg)
 [logo-image](./images/logo.svg)
 
-# Project Presentation
+**Project Presentation**
 
 https://drive.google.com/file/d/1_v4eTW9vER13kUKxiO9zfO3fgyxm_3pk/view?usp=sharing
+
+**Link to GitHub Pages**
+
+https://amanalove22.github.io/se_project_spots/

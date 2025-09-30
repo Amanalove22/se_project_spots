@@ -31,7 +31,7 @@
 }
 
 .profile__description {
-  max-width: 97px;
+  max-width: 420px;
   margin: 0;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
@@ -51,7 +51,7 @@
   margin-right: auto;
   display: flex;
   gap: 8px;
-  font-family: "Poppins" Arial, Helvetica, sans-serif
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: rgba(33, 33, 33, 1);
@@ -73,7 +73,7 @@
   color: #fcf5e5;
   font-size: 16px;
   font-weight: 500;
-  line-height: 100%; 
+  line-height: 100%;
   margin-left: auto;
   border: none;
   border-radius: 8px;
