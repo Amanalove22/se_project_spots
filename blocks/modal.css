@@ -1,0 +1,136 @@
+.modal {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #00000080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.modal__is-opened {
+  visibility: visible;
+}
+
+.modal__container {
+  position: relative;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  max-width: 730px;
+  width: 100%;
+  padding: 32px 50px;
+}
+
+.modal__close-button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 32px;
+  right: 50px;
+  opacity: 40%;
+  padding: 0;
+  border-style: none;
+}
+
+.modal__close-button-icon {
+  color: rgba(33, 33, 33, 1);
+}
+.modal__title {
+  margin: 0 0 32px;
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 32px;
+
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__label {
+  margin: 0 0 32px;
+  font-size: 16px;
+  color: rgba(33, 33, 33, 0.7);
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+
+  line-height: 110.00000000000001%;
+  letter-spacing: 0%;
+}
+.modal__input {
+  display: block;
+  margin: 8px 0 0;
+  border: 1px;
+  border-radius: 8px;
+  border-color: rgba(33, 33, 33, 0.4);
+  border-style: solid;
+  padding: 16px 0 16px 12px;
+  color: rgba(33, 33, 33, 0.4);
+  width: 100%;
+}
+
+.modal__input::placeholder {
+  color: rgba(33, 33, 33, 0.3);
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+
+  line-height: 110.00000000000001%;
+  letter-spacing: 0%;
+}
+
+.modal__submit-button {
+  padding: 18px 58px;
+  width: 156px;
+  border-radius: 8px;
+  background-color: rgba(33, 33, 33, 1);
+  color: rgba(252, 245, 229, 1);
+}
+
+@media screen and (max-width: 629px) {
+  .modal__title {
+    margin: 0 0 34px;
+    font-family: Poppins;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 20px;
+
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+
+  .modal__label {
+    font-family: Poppins;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+
+  .modal__input::placeholder {
+    font-family: Poppins;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+
+  .modal__submit-button {
+    width: 100%;
+  }
+}
