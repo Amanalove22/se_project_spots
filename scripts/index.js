@@ -1,0 +1,35 @@
+console.log("<p>yoooo </p>");
+
+const editProfileBtn = document.querySelector(".profile__button-edit");
+
+const editProfileModal = document.querySelector("#edit-profile-modal");
+
+const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
+
+/*Selecters for editProfileModal above this comment*/
+
+const newPostBtn = document.querySelector(".profile__button-post");
+
+const newPostModal = document.querySelector("#new-post-modal");
+
+const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
+
+/* Selecters for newPostModal above this line*/
+
+editProfileBtn.addEventListener("click", function () {
+  editProfileModal.classList.add("modal_is-opened");
+});
+
+editProfileCloseBtn.addEventListener("click", function () {
+  editProfileModal.classList.remove("modal_is-opened");
+});
+
+/*event listeners for edit modal above this line*/
+
+newPostBtn.addEventListener("click", function () {
+  newPostModal.classList.add("modal_is-opened");
+});
+
+newPostCloseBtn.addEventListener("click", function () {
+  newPostModal.classList.remove("modal_is-opened");
+});
