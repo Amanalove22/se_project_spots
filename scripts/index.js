@@ -32,14 +32,14 @@ const inputEditProfileDescription = editProfileModal.querySelector(
 /* Selectors to edit profile content once save button is 
 pressed below this line*/
 
-const editFormElement = editProfileModal.querySelector(".modal__form");
+const editProfileFormElement = editProfileModal.querySelector(".modal__form");
 
 /* No confusion above and below are diffrent things*/
 
-inputEditProfileName = function fillInputFields() {
+function fillInputFields() {
   inputEditProfileName.value = editProfileName.textContent;
   inputEditProfileDescription.value = editProfileDescription.textContent;
-};
+}
 
 fillInputFields();
 /*Filling in edit profile input fields with current user data above this line*/
@@ -66,6 +66,10 @@ newPostCloseBtn.addEventListener("click", function () {
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
+  editProfileName.textContent = inputEditProfileName.value;
+  editProfileDescription.textContent = inputEditProfileDescription.value;
+
+  editProfileModal.classList.remove("modal_is-opened");
 }
 
 editProfileFormElement.addEventListener("submit", handleProfileFormSubmit);
