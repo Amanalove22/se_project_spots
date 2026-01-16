@@ -29,10 +29,16 @@ const inputEditProfileDescription = editProfileModal.querySelector(
 );
 /*Selectors to fill in edit modal with current user data above this line*/
 
-/* Selectors to edit profile content once save button is 
+/* Selectors to edit profile content and new post content once save button is 
 pressed below this line*/
 
 const editProfileFormElement = editProfileModal.querySelector(".modal__form");
+
+const newPostProfileFormElement = newPostModal.querySelector(".modal__form");
+
+const newPostNameInput = newPostModal.querySelector("#card-caption-input");
+
+const newPostLinkInput = newPostModal.querySelector("#card-image-input");
 
 /* No confusion above and below are diffrent things*/
 
@@ -73,3 +79,16 @@ function handleProfileFormSubmit(evt) {
 }
 
 editProfileFormElement.addEventListener("submit", handleProfileFormSubmit);
+
+/*function for edit profile above this line*/
+
+function handleAddCardSubmit(evt) {
+  evt.preventDefault();
+
+  console.log(newPostNameInput.value);
+  console.log(newPostLinkInput.value);
+
+  newPostModal.classList.remove("modal_is-opened");
+}
+
+newPostProfileFormElement.addEventListener("submit", handleAddCardSubmit);
