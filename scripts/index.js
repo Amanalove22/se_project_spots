@@ -32,35 +32,14 @@ const inputEditProfileDescription = editProfileModal.querySelector(
 /* Selectors to edit profile content once save button is 
 pressed below this line*/
 
-const editProfileFormElement = editProfileModal.querySelector(".modal__form");
+const editFormElement = editProfileModal.querySelector(".modal__form");
 
-const editProfileNameInput = editProfileModal.querySelector(
-  "#profile-name-input"
-);
+/* No confusion above and below are diffrent things*/
 
-const editProfileDescriptionInput = editProfileModal.querySelector(
-  "#profile-description-input"
-);
-
-/*IGNORE FOR NOW I MISREAD THE REQUIREMENTS
-const newPostProfileName = document.querySelector(".profile__button-post");
-
-const inputNewPostProfileName = newPostModal.querySelector("#new-post-modal");
-
-const inputNewPostProfileCardImage =
-  newPostModal.querySelector("#card-image-input");
-
-const inputNewPostProfileCardCaption = newPostModal.querySelector(
-  "#card-caption-input"
-);
-
-/*Selectors to fill in new post modal with current user data above this line
-IGNORRRREEE THISSSS */
-
-function fillInputFields() {
+inputEditProfileName = function fillInputFields() {
   inputEditProfileName.value = editProfileName.textContent;
   inputEditProfileDescription.value = editProfileDescription.textContent;
-}
+};
 
 fillInputFields();
 /*Filling in edit profile input fields with current user data above this line*/
@@ -87,8 +66,6 @@ newPostCloseBtn.addEventListener("click", function () {
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-
-  I am going to be changing this right now!!!!!!!!
 }
 
 editProfileFormElement.addEventListener("submit", handleProfileFormSubmit);
