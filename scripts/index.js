@@ -1,5 +1,3 @@
-console.log("<p>yoooo </p>");
-
 const editProfileBtn = document.querySelector(".profile__button-edit");
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -34,7 +32,7 @@ pressed below this line*/
 
 const editProfileFormElement = editProfileModal.querySelector(".modal__form");
 
-const newPostProfileFormElement = newPostModal.querySelector(".modal__form");
+const newPostFormElement = newPostModal.querySelector(".modal__form");
 
 const newPostNameInput = newPostModal.querySelector("#card-caption-input");
 
@@ -50,22 +48,32 @@ function fillInputFields() {
 fillInputFields();
 /*Filling in edit profile input fields with current user data above this line*/
 
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
+/*modal open and close function above this line*/
+
 editProfileBtn.addEventListener("click", function () {
-  editProfileModal.classList.add("modal_is-opened");
+  fillInputFields();
+  openModal(editProfileModal);
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 });
 
 /*event listeners for edit modal above this line*/
 
 newPostBtn.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
+  openModal(newPostModal);
 });
 
 newPostCloseBtn.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
 });
 
 /*event listeners for new post modal above this line*/
@@ -75,7 +83,7 @@ function handleProfileFormSubmit(evt) {
   editProfileName.textContent = inputEditProfileName.value;
   editProfileDescription.textContent = inputEditProfileDescription.value;
 
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 }
 
 editProfileFormElement.addEventListener("submit", handleProfileFormSubmit);
@@ -88,7 +96,7 @@ function handleAddCardSubmit(evt) {
   console.log(newPostNameInput.value);
   console.log(newPostLinkInput.value);
 
-  newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
 }
 
-newPostProfileFormElement.addEventListener("submit", handleAddCardSubmit);
+newPostFormElement.addEventListener("submit", handleAddCardSubmit);
