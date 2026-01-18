@@ -96,6 +96,8 @@ function handleAddCardSubmit(evt) {
   console.log(newPostNameInput.value);
   console.log(newPostLinkInput.value);
 
+  evt.target.reset();
+
   closeModal(newPostModal);
 }
 

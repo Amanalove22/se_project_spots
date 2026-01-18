@@ -33,7 +33,7 @@
   border: none;
   transition: opacity 0.8s ease-in;
   cursor: pointer;
-  color: rgb(33, 33, 33);
+  background-color: transparent;
   opacity: 40%;
 }
 
