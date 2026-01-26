@@ -1,3 +1,30 @@
+const initialCards = [
+  (object = {
+    name: "On a hill top in Costa Rica ",
+    link: "https://unsplash.com/photos/green-trees-on-brown-mountain-beside-blue-sea-during-daytime-3C0zrQUlyjM?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink",
+  }),
+  (object = {
+    name: "Vladimir from Russia",
+    link: "https://unsplash.com/photos/selective-focus-photography-of-orange-and-white-cat-on-brown-table-75715CVEJhI",
+  }),
+  (object = {
+    name: "Snowed in featuring New York",
+    link: "https://unsplash.com/photos/people-walking-near-road-and-different-cars-on-road-during-night-time-D6W63o3ZLQY",
+  }),
+  (object = {
+    name: "A very long bridge, over the forest and through the trees",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
+  }),
+  (object = {
+    name: "Tunnel with morning light",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
+  }),
+  (object = {
+    name: "Mountain house",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
+  }),
+];
+
 const editProfileBtn = document.querySelector(".profile__button-edit");
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -102,3 +129,7 @@ function handleAddCardSubmit(evt) {
 }
 
 newPostFormElement.addEventListener("submit", handleAddCardSubmit);
+
+initialCards.forEach(function (item) {
+  console.log(item.name);
+});
