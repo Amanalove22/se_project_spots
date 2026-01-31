@@ -4,6 +4,24 @@
   object-fit: cover;
   display: block;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+.card__delete-button {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  margin: 10px 10px 371px 371px;
+  background-image: url(../images/trash-default.svg);
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-image 0.4s ease-in;
+}
+
+.card__delete-button:hover {
+  background-image: url(../images/trash-hover.svg);
 }
 
 .card__content {
@@ -39,6 +57,17 @@
 
 .card__like-button:hover {
   opacity: 100%;
+}
+
+.card__like-button_active {
+  background-image: url(../images/Union.svg);
+  opacity: 100%;
+  background-repeat: no-repeat;
+  border: 1px;
+}
+
+.card__like-button_active:hover {
+  opacity: 50%;
 }
 
 @media screen and (max-width: 629px) {

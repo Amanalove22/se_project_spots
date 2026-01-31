@@ -1,27 +1,31 @@
 const initialCards = [
   (object = {
+    name: "The minds of wanting eyes",
+    link: " https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  }),
+  (object = {
     name: "On a hill top in Costa Rica ",
-    link: "https://unsplash.com/photos/green-trees-on-brown-mountain-beside-blue-sea-during-daytime-3C0zrQUlyjM?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink",
+    link: "https://images.unsplash.com/photo-1582218290380-ae58573670e3?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   }),
   (object = {
     name: "Vladimir from Russia",
-    link: "https://unsplash.com/photos/selective-focus-photography-of-orange-and-white-cat-on-brown-table-75715CVEJhI",
+    link: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=1015&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   }),
   (object = {
-    name: "Snowed in featuring New York",
-    link: "https://unsplash.com/photos/people-walking-near-road-and-different-cars-on-road-during-night-time-D6W63o3ZLQY",
+    name: "Snow day featuring New York City",
+    link: "https://images.unsplash.com/photo-1542389266-f8b2d4f94e54?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   }),
   (object = {
-    name: "A very long bridge, over the forest and through the trees",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
+    name: "Just a girl's morning routine",
+    link: "https://images.unsplash.com/photo-1551723454-7565a1f5b161?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   }),
   (object = {
-    name: "Tunnel with morning light",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
+    name: "Another home aka a Roller Rink",
+    link: "https://images.unsplash.com/photo-1593029352324-5d8a5230d224?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   }),
   (object = {
-    name: "Mountain house",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
+    name: "The friendly skies",
+    link: "https://images.unsplash.com/photo-1606768666853-403c90a981ad?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   }),
 ];
 
@@ -65,6 +69,26 @@ const newPostNameInput = newPostModal.querySelector("#card-caption-input");
 
 const newPostLinkInput = newPostModal.querySelector("#card-image-input");
 
+/* Card List Selector below this line*/
+
+const cardsList = document.querySelector(".cards__list");
+
+/* Card Template Selector below this line*/
+
+const cardTemplate = document.querySelector("#card-template");
+
+/* Preview modal Selectors below this line*/
+
+const modalPreview = document.querySelector("#preview-modal");
+
+const modalPreviewCloseBtn = modalPreview.querySelector(
+  ".modal__close-btn_type_preview"
+);
+
+const modalPreviewImage = modalPreview.querySelector(".modal__image");
+
+const modalPreviewCaption = modalPreview.querySelector(".modal__caption");
+
 /* No confusion above and below are diffrent things*/
 
 function fillInputFields() {
@@ -103,6 +127,10 @@ newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
+modalPreviewCloseBtn.addEventListener("click", function () {
+  closeModal(modalPreview);
+});
+
 /*event listeners for new post modal above this line*/
 
 function handleProfileFormSubmit(evt) {
@@ -119,10 +147,13 @@ editProfileFormElement.addEventListener("submit", handleProfileFormSubmit);
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
+  data = { name: newPostNameInput.value, link: newPostLinkInput.value };
+  const cardItem = getCardElement(data);
 
   console.log(newPostNameInput.value);
   console.log(newPostLinkInput.value);
 
+  cardsList.prepend(cardItem);
   evt.target.reset();
 
   closeModal(newPostModal);
@@ -132,4 +163,48 @@ newPostFormElement.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach(function (item) {
   console.log(item.name);
+});
+
+function getCardElement(data) {
+  const cardTemplate = document
+    .querySelector("#card-template")
+    .content.querySelector(".card");
+
+  const cardElement = cardTemplate.cloneNode(true);
+
+  const cardTitle = cardElement.querySelector(".card__title");
+
+  const cardImg = cardElement.querySelector(".card__image");
+
+  cardImg.src = data.link;
+
+  cardImg.alt = data.name;
+
+  cardTitle.textContent = data.name;
+
+  const cardLikeBtn = cardElement.querySelector(".card__like-button");
+  cardLikeBtn.addEventListener("click", function () {
+    cardLikeBtn.classList.toggle("card__like-button_active");
+  });
+
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
+  cardDeleteBtn.addEventListener("click", function () {
+    cardElement.remove();
+  });
+
+  cardImg.addEventListener("click", function () {
+    modalPreviewCaption.textContent = data.name;
+    modalPreviewImage.src = data.link;
+    modalPreviewImage.alt = data.link;
+
+    openModal(modalPreview);
+  });
+
+  return cardElement;
+}
+
+initialCards.forEach(function (item) {
+  const cardItem = getCardElement(item);
+
+  cardsList.prepend(cardItem);
 });

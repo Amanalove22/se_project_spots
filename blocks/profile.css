@@ -64,9 +64,9 @@
   opacity: 1;
 }
 
-.profile__button-editicon {
+/*.profile__button-editicon {
   color: rgba(33, 33, 33, 70%);
-}
+}*/
 
 .profile__button-post {
   background-color: rgba(33, 33, 33, 1);
