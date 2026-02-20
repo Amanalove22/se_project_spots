@@ -31,7 +31,7 @@
             <button type="button" class="profile__button-edit">
               <img
                 src="./images/pencil.svg"
-                alt="start"
+                alt="profile__button-editicon"
                 class="profile__button-editicon"
               />
               Edit Profile
@@ -40,7 +40,7 @@
           <button type="button" class="profile__button-post">
             <img
               src="./images/plus1.svg"
-              alt="start"
+              alt="profile__button-posticon"
               class="profile__button-posticon"
             />
             New Post
@@ -69,7 +69,12 @@
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
-            <img src="" alt="" class="modal__close-btn-icon" />
+            <img
+              src="./images/close-icon.svg"
+              alt=""
+              aria-hidden="true"
+              class="modal__close-btn-icon"
+            />
           </button>
           <h2 class="modal__title">Edit Profile</h2>
           <form class="modal__form" name="edit">
@@ -80,6 +85,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
+                required
               />
             </label>
 
@@ -90,6 +96,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Describe yourself"
+                required
               />
             </label>
 
@@ -101,7 +108,12 @@
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
-            <img src="" class="modal__close-btn-icon" alt="" />
+            <img
+              src="./images/close-icon.svg"
+              alt="modal__close-btn-icon"
+              aria-hidden="true"
+              class="modal__close-btn-icon"
+            />
           </button>
           <h2 class="modal__title">New post</h2>
           <form class="modal__form" name="edit">
@@ -112,6 +124,7 @@
                 type="url"
                 class="modal__input"
                 placeholder="Paste a link to the picture"
+                required
               />
             </label>
 
@@ -122,6 +135,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type yor caption"
+                required
               />
             </label>
 
@@ -136,8 +150,7 @@
             type="button"
             class="modal__close-btn modal__close-btn_type_preview"
           ></button>
-          <img src="" alt="" class="modal__image" />
-
+          <img src="#" alt="" class="modal__image" />
           <p class="modal__caption"></p>
         </div>
       </div>

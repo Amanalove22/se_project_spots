@@ -1,32 +1,32 @@
 const initialCards = [
-  (object = {
+  {
     name: "The minds of wanting eyes",
-    link: " https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  }),
-  (object = {
+    link: "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
     name: "On a hill top in Costa Rica ",
     link: "https://images.unsplash.com/photo-1582218290380-ae58573670e3?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  }),
-  (object = {
+  },
+  {
     name: "Vladimir from Russia",
     link: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=1015&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  }),
-  (object = {
+  },
+  {
     name: "Snow day featuring New York City",
     link: "https://images.unsplash.com/photo-1542389266-f8b2d4f94e54?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  }),
-  (object = {
+  },
+  {
     name: "Just a girl's morning routine",
     link: "https://images.unsplash.com/photo-1551723454-7565a1f5b161?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  }),
-  (object = {
+  },
+  {
     name: "Another home aka a Roller Rink",
     link: "https://images.unsplash.com/photo-1593029352324-5d8a5230d224?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  }),
-  (object = {
+  },
+  {
     name: "The friendly skies",
     link: "https://images.unsplash.com/photo-1606768666853-403c90a981ad?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  }),
+  },
 ];
 
 const editProfileBtn = document.querySelector(".profile__button-edit");
@@ -75,7 +75,9 @@ const cardsList = document.querySelector(".cards__list");
 
 /* Card Template Selector below this line*/
 
-const cardTemplate = document.querySelector("#card-template");
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
 
 /* Preview modal Selectors below this line*/
 
@@ -147,7 +149,7 @@ editProfileFormElement.addEventListener("submit", handleProfileFormSubmit);
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  data = { name: newPostNameInput.value, link: newPostLinkInput.value };
+  const data = { name: newPostNameInput.value, link: newPostLinkInput.value };
   const cardItem = getCardElement(data);
 
   console.log(newPostNameInput.value);
@@ -166,10 +168,6 @@ initialCards.forEach(function (item) {
 });
 
 function getCardElement(data) {
-  const cardTemplate = document
-    .querySelector("#card-template")
-    .content.querySelector(".card");
-
   const cardElement = cardTemplate.cloneNode(true);
 
   const cardTitle = cardElement.querySelector(".card__title");
@@ -195,7 +193,7 @@ function getCardElement(data) {
   cardImg.addEventListener("click", function () {
     modalPreviewCaption.textContent = data.name;
     modalPreviewImage.src = data.link;
-    modalPreviewImage.alt = data.link;
+    modalPreviewImage.alt = data.name;
 
     openModal(modalPreview);
   });
