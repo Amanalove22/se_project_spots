@@ -68,7 +68,6 @@
   background-image: url(../images/Union.svg);
   opacity: 1;
   background-repeat: no-repeat;
-  border: 1px;
 }
 
 .card__like-button_active:hover {

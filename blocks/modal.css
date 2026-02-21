@@ -15,7 +15,8 @@
 }
 
 .modal_is-opened {
-  transition: visibility 0s linear 0s opacity 0.3s ease-in 0s;
+  visibility: visible;
+  opacity: 1;
 }
 
 .modal__container {
@@ -155,7 +156,6 @@
 
   .modal__title {
     margin: 0 0 34px;
-    font-size: 20px;
   }
 
   .modal__submit-btn {
