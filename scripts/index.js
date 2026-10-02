@@ -48,13 +48,13 @@ const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const editProfileName = document.querySelector(".profile__name");
 
 const inputEditProfileName = editProfileModal.querySelector(
-  "#profile-name-input"
+  "#profile-name-input",
 );
 
 const editProfileDescription = document.querySelector(".profile__description");
 
 const inputEditProfileDescription = editProfileModal.querySelector(
-  "#profile-description-input"
+  "#profile-description-input",
 );
 /*Selectors to fill in edit modal with current user data above this line*/
 
@@ -84,7 +84,7 @@ const cardTemplate = document
 const modalPreview = document.querySelector("#preview-modal");
 
 const modalPreviewCloseBtn = modalPreview.querySelector(
-  ".modal__close-btn_type_preview"
+  ".modal__close-btn_type_preview",
 );
 
 const modalPreviewImage = modalPreview.querySelector(".modal__image");
@@ -205,4 +205,40 @@ initialCards.forEach(function (item) {
   const cardItem = getCardElement(item);
 
   cardsList.prepend(cardItem);
+});
+
+/*Lines 213 - 217 defines what should happen when a click event 
+occurs but it doesnt run on its own yet*/
+
+const handleOverlayClick = (evt) => {
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target);
+  }
+};
+
+/*Line 225 selects all 3 modals and puts them in a variable called modalArrays
+line 226 iterates through all 3 arrays 
+line 227 adds a click listeneer and calls the handleOverlayClick function as it 
+- already accepts evt as its parameter and does the check internally
+*/
+
+const modalArrays = Array.from(document.querySelectorAll(".modal"));
+modalArrays.forEach((modalArray) => {
+  modalArray.addEventListener("click", handleOverlayClick);
+});
+
+/*Line 237 attaches a keydown listener to the whole document. The callback recieves the event object named key
+line 238 calls the .find() on modalArrays to iterate thru all modal elements and puts it into a variable called singleModal
+line 239 .find() iterates checking if any modal has the class modal_is-opened and returns first modal that is true
+- singleModal holds the open modal class/element
+line 241 checks if the "Esc" btn was pressed and if singleModal is truthy
+line 242 if both are true the closeModal function closes it out*/
+
+document.addEventListener("keydown", function (key) {
+  const singleModal = modalArrays.find((modal) => {
+    return modal.classList.contains("modal_is-opened");
+  });
+  if (key.key === "Escape" && singleModal) {
+    closeModal(singleModal);
+  }
 });

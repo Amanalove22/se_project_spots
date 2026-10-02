@@ -40,7 +40,8 @@ Welcome to The Responsive Spots website where you can edit and add images for a 
 
 **Project Presentation**
 
-https://drive.google.com/file/d/1_v4eTW9vER13kUKxiO9zfO3fgyxm_3pk/view?usp=sharing
+Check out this video (https://drive.google.com/file/d/1jdWeVYixHBPsqZ9dw0HzRRmilu6Bzd09/view?usp=sharing), where I describe my
+project and some challenges I faced while building it.
 
 **Link to GitHub Pages**
 
